@@ -20,6 +20,7 @@ Usage
 ```
 cd ./WaterFight && ruby init.rb
 ```
+If you want to spy where the ships, put to input "surrender" :)
 
 Run tests
 -----------
