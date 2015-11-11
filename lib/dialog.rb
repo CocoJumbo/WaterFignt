@@ -12,6 +12,9 @@ class Dialog
   SURRENDER = 2
   ERROR = 3
 
+  ROWS_DISPLAY = 11
+  COLUMNS_DISPLAY = 11
+
   def parse_coordinate(input_text)
     fail 'invalid input' unless input_text =~ /^[A-J]([1-9]|10)$/
     x = (input_text.slice /\d{1,2}/).to_i
@@ -48,8 +51,8 @@ class Dialog
   end
 
   def show_schema
-    11.times do |x|
-      11.times do |y|
+    ROWS_DISPLAY.times do |x|
+      COLUMNS_DISPLAY.times do |y|
         sh_cell = @square.showing_schema[x][y]
         sh_cell = ' S ' if @out_case == SURRENDER &&
                            @square.private_schema[x][y].class == Ship
